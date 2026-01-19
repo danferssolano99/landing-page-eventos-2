@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacienda Solano | Eventos de Ensueño</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, .font-display { font-family: 'Playfair Display', serif; }
+        .hero-gradient {
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 scroll-smooth">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-900 rounded-xl flex items-center justify-center text-white shadow-lg shadow-emerald-900/20">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-emerald-900 leading-none uppercase">Hacienda</span>
+                    <span class="text-sm font-semibold tracking-widest text-emerald-700">SOLANO</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-slate-600">
+                <a href="#beneficios" class="hover:text-emerald-700 transition">Beneficios</a>
+                <a href="#alojamiento" class="hover:text-emerald-700 transition">Alojamiento</a>
+                <a href="#servicios" class="hover:text-emerald-700 transition">Servicios</a>
+            </div>
+            <a href="https://wa.me/51905433158" target="_blank" class="bg-emerald-900 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i> CONSULTAR FECHA
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient h-[90vh] flex items-center px-6 pt-20">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="max-w-3xl">
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/20 backdrop-blur-md text-emerald-300 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6">Paiján · La Libertad</span>
+                <h1 class="text-5xl md:text-7xl text-white mb-8 leading-[1.1]">Donde tus sueños cobran vida propia.</h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-10 font-light leading-relaxed max-w-2xl">
+                    Te ofrecemos el ambiente perfecto para tu celebración, con un espacio versátil y totalmente personalizable. 💒🎂📋
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="https://wa.me/51905433158" target="_blank" class="bg-white text-emerald-900 px-9 py-4 rounded-full font-bold text-lg hover:bg-emerald-50 transition shadow-2xl">Solicitar Cotización</a>
+                    <a href="#alojamiento" class="bg-transparent border-2 border-white/30 backdrop-blur-sm text-white px-9 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">Ver Alojamiento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios Generales -->
+    <section id="beneficios" class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <span class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4 block">Exclusividad Solano</span>
+                <h2 class="text-4xl md:text-5xl mb-6">Beneficios Generales</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
+                    <i class="fas fa-hotel text-2xl text-amber-600 mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2">Hotel 🛎</h4>
+                    <p class="text-[10px] text-slate-500 italic">Interior disponible</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
+                    <i class="fas fa-wifi text-2xl text-blue-600 mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2">Wi-Fi 🛜</h4>
+                    <p class="text-[10px] text-emerald-700 font-bold uppercase">Gratis</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
+                    <i class="fas fa-map-pin text-2xl text-emerald-600 mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2">Ubicación 📍</h4>
+                    <p class="text-[10px] text-slate-500">Acceso Directo</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
+                    <i class="fas fa-glass-cheers text-2xl text-purple-600 mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2">Bebidas 🥂</h4>
+                    <p class="text-[10px] text-slate-500">Variedad en local</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover col-span-2 lg:col-span-1">
+                    <i class="fas fa-plus-circle text-2xl text-rose-600 mb-4"></i>
+                    <h4 class="font-bold text-xs uppercase mb-2">Plus 🙂‍↕️</h4>
+                    <p class="text-[10px] text-slate-500">Parking & Horas Extra</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nueva Sección: Alojamiento -->
+    <section id="alojamiento" class="py-24 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <span class="text-emerald-700 font-bold uppercase tracking-[0.2em] text-xs">Comodidad sin salir de la Hacienda</span>
+                    <h2 class="text-4xl md:text-5xl mt-4 mb-8">Alojamiento para tus invitados 🛎</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Entendemos que muchos de tus invitados pueden venir desde lejos. Por ello, ofrecemos un **hotel interior** exclusivo dentro de la Hacienda para que puedan descansar con total seguridad y comodidad antes o después de la gran celebración.
+                    </p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+                        <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-800">Servicio Disponible</p>
+                            <p class="text-xs text-slate-500">Este servicio es independiente del paquete de eventos. Consulta disponibilidad y tarifas especiales para grupos al agendar tu visita.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative group">
+                    <div class="absolute -inset-4 bg-emerald-900/5 rounded-[3rem] -z-10 transition group-hover:bg-emerald-900/10"></div>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Alojamiento Hacienda Solano" 
+                         class="w-full h-[500px] object-cover rounded-[2.5rem] shadow-2xl border-4 border-white">
+                    <!-- Etiqueta de referencia -->
+                    <div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-lg">
+                        <p class="text-xs font-bold text-emerald-900 uppercase tracking-widest">
+                            <i class="fas fa-camera mr-2"></i> Foto de Referencia
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+                
+                <!-- Servicio Tierra -->
+                <div class="bg-white rounded-[2.5rem] p-10 shadow-xl border border-slate-200 flex flex-col card-hover">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center text-3xl">
+                            <i class="fas fa-mountain-sun"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-emerald-950">Servicio Tierra 🌄</h3>
+                            <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest">Alquiler de Espacio</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 flex-grow mb-10 text-sm">
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> 7 Horas de fiesta 🎉</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Salón 250 m² con atmósfera natural 🪩</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Mesas de madera y sillas tradicionales 🪑</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Staff de bienvenida y limpieza 🧼</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Seguridad y parking privado 🚗</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Proyección en pantalla grande 🎬</li>
+                    </ul>
+                    <div class="pt-8 border-t border-slate-100">
+                        <p class="text-3xl font-bold text-emerald-900">Desde S/ 8.00 <span class="text-sm font-medium opacity-50">por persona</span></p>
+                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-3 bg-emerald-900 text-white rounded-xl font-bold hover:bg-emerald-800 transition">Consultar Disponibilidad</a>
+                    </div>
+                </div>
+
+                <!-- Servicio Fuego -->
+                <div class="bg-emerald-950 rounded-[2.5rem] p-10 shadow-2xl flex flex-col text-white card-hover">
+                    <div class="flex items-center gap-4 mb-8 relative z-10">
+                        <div class="w-16 h-16 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/20">
+                            <i class="fas fa-fire-flame-curved"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-3xl font-bold">Servicio Fuego ❤️‍🔥</h3>
+                            <span class="text-emerald-400 font-bold text-sm uppercase tracking-widest">Experiencia Premium</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 flex-grow mb-10 text-sm relative z-10">
+                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Todo el Servicio Tierra incluido</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Catering completo (Entrada y Fondo) 🍽️</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Sonido envolvente y Animación 🎤</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Brindis protocolar con acompañamiento 🥂</li>
+                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Fondo decorativo para fotos 🖼️</li>
+                    </ul>
+                    <div class="pt-8 border-t border-white/10 relative z-10">
+                        <p class="text-3xl font-bold text-emerald-400">Desde S/ 39.00 <span class="text-sm font-medium opacity-50">por persona</span></p>
+                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-3 bg-emerald-400 text-emerald-950 rounded-xl font-bold hover:bg-white transition">Solicitar Presupuesto Fuego</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                    <i class="fas fa-landmark text-xs"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-white uppercase">Hacienda Solano</span>
+            </div>
+            <p class="text-sm mb-8 leading-relaxed max-w-lg mx-auto">
+                El escenario perfecto para bodas, cumpleaños y eventos corporativos en Paiján. Espacios versátiles y naturaleza en armonía.
+            </p>
+            <div class="flex justify-center gap-6 mb-10">
+                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="https://wa.me/51905433158" target="_blank" class="hover:text-white transition"><i class="fab fa-whatsapp text-xl"></i></a>
+            </div>
+            <p class="text-xs mb-8 uppercase tracking-widest">&copy; 2024 Hacienda Solano · Panamericana Norte · Paiján, La Libertad</p>
+            <a href="https://wa.me/51905433158" target="_blank" class="inline-block bg-emerald-600 text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20">
+                AGENDAR VISITA GUIADA
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
