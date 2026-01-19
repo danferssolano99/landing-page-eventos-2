@@ -27,6 +27,29 @@
             transform: translateY(-10px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+        /* Estilos para los Sliders */
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #064e3b;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .fuego-slider::-webkit-slider-thumb {
+            background: #10b981 !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 scroll-smooth">
@@ -47,6 +70,7 @@
                 <a href="#beneficios" class="hover:text-emerald-700 transition">Beneficios</a>
                 <a href="#alojamiento" class="hover:text-emerald-700 transition">Alojamiento</a>
                 <a href="#servicios" class="hover:text-emerald-700 transition">Servicios</a>
+                <a href="#ubicacion" class="hover:text-emerald-700 transition">Ubicación</a>
             </div>
             <a href="https://wa.me/51905433158" target="_blank" class="bg-emerald-900 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/30 flex items-center gap-2">
                 <i class="fab fa-whatsapp text-lg"></i> CONSULTAR FECHA
@@ -65,7 +89,7 @@
                 </p>
                 <div class="flex flex-wrap gap-5">
                     <a href="https://wa.me/51905433158" target="_blank" class="bg-white text-emerald-900 px-9 py-4 rounded-full font-bold text-lg hover:bg-emerald-50 transition shadow-2xl">Solicitar Cotización</a>
-                    <a href="#alojamiento" class="bg-transparent border-2 border-white/30 backdrop-blur-sm text-white px-9 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">Ver Alojamiento</a>
+                    <a href="#ubicacion" class="bg-transparent border-2 border-white/30 backdrop-blur-sm text-white px-9 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">¿Cómo llegar?</a>
                 </div>
             </div>
         </div>
@@ -75,129 +99,348 @@
     <section id="beneficios" class="py-24 bg-white border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="mb-16">
-                <span class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4 block">Exclusividad Solano</span>
-                <h2 class="text-4xl md:text-5xl mb-6">Beneficios Generales</h2>
+                <span class="text-emerald-600 font-bold uppercase tracking-widest text-sm mb-4 block text-center">Exclusividad Solano</span>
+                <h2 class="text-4xl md:text-5xl mb-6 font-display">Beneficios Generales</h2>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
-                    <i class="fas fa-hotel text-2xl text-amber-600 mb-4"></i>
-                    <h4 class="font-bold text-xs uppercase mb-2">Hotel 🛎</h4>
-                    <p class="text-[10px] text-slate-500 italic">Interior disponible</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Hotel Interior -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover text-left flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-3">Hotel Interior 🛎</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Alojamiento disponible para tus invitados que vienen desde lejos, sin salir de la Hacienda. <span class="italic font-medium">(No incluido)</span></p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
-                    <i class="fas fa-wifi text-2xl text-blue-600 mb-4"></i>
-                    <h4 class="font-bold text-xs uppercase mb-2">Wi-Fi 🛜</h4>
-                    <p class="text-[10px] text-emerald-700 font-bold uppercase">Gratis</p>
+                <!-- Wi-Fi -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover text-left flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-3">Acceso Wi-Fi 🛜</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Conexión a internet para que tus invitados puedan compartir sus momentos especiales en tiempo real. <span class="font-bold text-emerald-700">Gratis</span></p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
-                    <i class="fas fa-map-pin text-2xl text-emerald-600 mb-4"></i>
-                    <h4 class="font-bold text-xs uppercase mb-2">Ubicación 📍</h4>
-                    <p class="text-[10px] text-slate-500">Acceso Directo</p>
+                <!-- Ubicación -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover text-left flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-3">Ubicación Clave 📍</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Situado en plena panamericana con fácil acceso a transporte público para comodidad de todos.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover">
-                    <i class="fas fa-glass-cheers text-2xl text-purple-600 mb-4"></i>
-                    <h4 class="font-bold text-xs uppercase mb-2">Bebidas 🥂</h4>
-                    <p class="text-[10px] text-slate-500">Variedad en local</p>
+                <!-- Bebidas -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover text-left flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-3">Bebidas en Local 🥂</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Disfruta de una amplia variedad: cervezas, licores y más, todo listo en el local para tu celebración.</p>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 card-hover col-span-2 lg:col-span-1">
-                    <i class="fas fa-plus-circle text-2xl text-rose-600 mb-4"></i>
-                    <h4 class="font-bold text-xs uppercase mb-2">Plus 🙂‍↕️</h4>
-                    <p class="text-[10px] text-slate-500">Parking & Horas Extra</p>
+                <!-- Piscina -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 card-hover text-left flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-sky-50 text-sky-600 rounded-2xl flex items-center justify-center mb-6 text-2xl shadow-sm">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h4 class="font-bold text-sm uppercase mb-3">Piscina tipo playa</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Relájate en nuestra piscina estilo playa con cascada y lago artificial integrado a la naturaleza.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Nueva Sección: Alojamiento -->
+    <!-- Sección: Alojamiento -->
     <section id="alojamiento" class="py-24 bg-stone-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-16">
-                <div class="lg:w-1/2">
-                    <span class="text-emerald-700 font-bold uppercase tracking-[0.2em] text-xs">Comodidad sin salir de la Hacienda</span>
-                    <h2 class="text-4xl md:text-5xl mt-4 mb-8">Alojamiento para tus invitados 🛎</h2>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        Entendemos que muchos de tus invitados pueden venir desde lejos. Por ello, ofrecemos un **hotel interior** exclusivo dentro de la Hacienda para que puedan descansar con total seguridad y comodidad antes o después de la gran celebración.
-                    </p>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
-                        <div class="w-10 h-10 bg-amber-50 text-amber-600 rounded-lg flex items-center justify-center shrink-0">
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-800">Servicio Disponible</p>
-                            <p class="text-xs text-slate-500">Este servicio es independiente del paquete de eventos. Consulta disponibilidad y tarifas especiales para grupos al agendar tu visita.</p>
-                        </div>
-                    </div>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-emerald-700 font-bold uppercase tracking-[0.2em] text-xs">Comodidad sin salir de la Hacienda</span>
+            <h2 class="text-4xl md:text-5xl mt-4 mb-8 font-display">Alojamiento para tus invitados 🛎</h2>
+            <p class="text-slate-600 mb-10 leading-relaxed text-lg">
+                Entendemos que muchos de tus invitados pueden venir desde lejos. Por ello, ofrecemos un **hotel interior** exclusivo dentro de la Hacienda para que puedan descansar con total seguridad y comodidad tras la celebración.
+            </p>
+            <div class="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6 text-left max-w-2xl mx-auto">
+                <div class="w-14 h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center shrink-0 text-2xl">
+                    <i class="fas fa-info-circle"></i>
                 </div>
-                <div class="lg:w-1/2 relative group">
-                    <div class="absolute -inset-4 bg-emerald-900/5 rounded-[3rem] -z-10 transition group-hover:bg-emerald-900/10"></div>
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Alojamiento Hacienda Solano" 
-                         class="w-full h-[500px] object-cover rounded-[2.5rem] shadow-2xl border-4 border-white">
-                    <!-- Etiqueta de referencia -->
-                    <div class="absolute bottom-8 left-8 bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-lg">
-                        <p class="text-xs font-bold text-emerald-900 uppercase tracking-widest">
-                            <i class="fas fa-camera mr-2"></i> Foto de Referencia
-                        </p>
-                    </div>
+                <div>
+                    <p class="text-lg font-bold text-slate-800">Servicio Disponible</p>
+                    <p class="text-sm text-slate-500">Este servicio es independiente del paquete de eventos. Consulta disponibilidad y tarifas especiales para grupos al agendar tu visita guiada.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sección de Servicios -->
+    <!-- Sección de Servicios con Sliders -->
     <section id="servicios" class="py-24 bg-slate-100">
         <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl mb-4 font-display">Propuestas de Valor</h2>
+                <p class="text-slate-500">Simula tu presupuesto según el número de invitados (Máx. 300).</p>
+            </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
                 
                 <!-- Servicio Tierra -->
                 <div class="bg-white rounded-[2.5rem] p-10 shadow-xl border border-slate-200 flex flex-col card-hover">
-                    <div class="flex items-center gap-4 mb-8">
-                        <div class="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center text-3xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-800 rounded-2xl flex items-center justify-center text-2xl">
                             <i class="fas fa-mountain-sun"></i>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-bold text-emerald-950">Servicio Tierra 🌄</h3>
-                            <span class="text-emerald-600 font-bold text-sm uppercase tracking-widest">Alquiler de Espacio</span>
+                            <h3 class="text-2xl font-bold text-emerald-950">Servicio Tierra 🌄</h3>
+                            <span class="text-emerald-600 font-bold text-xs uppercase tracking-widest">Alquiler de Espacio</span>
                         </div>
                     </div>
-                    <ul class="space-y-4 flex-grow mb-10 text-sm">
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> 7 Horas de fiesta 🎉</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Salón 250 m² con atmósfera natural 🪩</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Mesas de madera y sillas tradicionales 🪑</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Staff de bienvenida y limpieza 🧼</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Seguridad y parking privado 🚗</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-check text-emerald-500 mt-1"></i> Proyección en pantalla grande 🎬</li>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl mb-8 border border-slate-100">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-slate-400">N° Invitados</span>
+                            <span class="text-2xl font-bold text-emerald-900" id="valTierra">100</span>
+                        </div>
+                        <input type="range" id="sliderTierra" min="20" max="300" value="100" class="mb-4">
+                        <div class="flex justify-between text-[10px] text-slate-400 font-bold">
+                            <span>20 PAX</span>
+                            <span>300 PAX</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 flex-grow mb-10 text-sm">
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> 7 Horas de fiesta 🎉</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Salón 250 m² + Áreas Verdes 🪩</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Mobiliario en stock incluido 🪑</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Staff de recepción y limpieza 🧼</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> Pantalla gigante y Wi-Fi 🎬</li>
                     </ul>
+                    
                     <div class="pt-8 border-t border-slate-100">
-                        <p class="text-3xl font-bold text-emerald-900">Desde S/ 8.00 <span class="text-sm font-medium opacity-50">por persona</span></p>
-                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-3 bg-emerald-900 text-white rounded-xl font-bold hover:bg-emerald-800 transition">Consultar Disponibilidad</a>
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Costo por persona</p>
+                                <p class="text-4xl font-bold text-emerald-900" id="unitTierra">S/ 16.00</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Total del Local</p>
+                                <p class="text-lg font-bold text-slate-600" id="priceTierra">S/ 1,600</p>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-4 bg-emerald-900 text-white rounded-xl font-bold hover:bg-emerald-800 transition shadow-lg shadow-emerald-900/20">
+                            Consultar Fecha
+                        </a>
                     </div>
                 </div>
 
                 <!-- Servicio Fuego -->
-                <div class="bg-emerald-950 rounded-[2.5rem] p-10 shadow-2xl flex flex-col text-white card-hover">
-                    <div class="flex items-center gap-4 mb-8 relative z-10">
-                        <div class="w-16 h-16 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-3xl shadow-lg shadow-emerald-500/20">
+                <div class="bg-emerald-950 rounded-[2.5rem] p-10 shadow-2xl flex flex-col text-white card-hover relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-800/10 rounded-full blur-3xl"></div>
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-14 h-14 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-2xl shadow-lg shadow-emerald-500/20">
                             <i class="fas fa-fire-flame-curved"></i>
                         </div>
                         <div>
-                            <h3 class="text-3xl font-bold">Servicio Fuego ❤️‍🔥</h3>
-                            <span class="text-emerald-400 font-bold text-sm uppercase tracking-widest">Experiencia Premium</span>
+                            <h3 class="text-2xl font-bold">Servicio Fuego ❤️‍🔥</h3>
+                            <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest">Experiencia Premium</span>
                         </div>
                     </div>
-                    <ul class="space-y-4 flex-grow mb-10 text-sm relative z-10">
-                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Todo el Servicio Tierra incluido</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Catering completo (Entrada y Fondo) 🍽️</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Sonido envolvente y Animación 🎤</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Brindis protocolar con acompañamiento 🥂</li>
-                        <li class="flex items-start gap-4"><i class="fas fa-star text-emerald-400 mt-1"></i> Fondo decorativo para fotos 🖼️</li>
+
+                    <div class="bg-white/5 p-6 rounded-2xl mb-8 border border-white/10 relative z-10">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">N° Invitados</span>
+                            <span class="text-2xl font-bold text-white" id="valFuego">100</span>
+                        </div>
+                        <input type="range" id="sliderFuego" min="20" max="300" value="100" class="mb-4 fuego-slider">
+                        <div class="flex justify-between text-[10px] text-emerald-400/50 font-bold">
+                            <span>20 PAX</span>
+                            <span>300 PAX</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 flex-grow mb-10 text-sm relative z-10">
+                        <li class="flex items-start gap-3"><i class="fas fa-star text-emerald-400 mt-1"></i> Todo el Servicio Tierra incluido</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-star text-emerald-400 mt-1"></i> Catering completo 🍽️</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-star text-emerald-400 mt-1"></i> Sonido envolvente y Animación 🎤</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-star text-emerald-400 mt-1"></i> Brindis protocolar servido 🥂</li>
+                        <li class="flex items-start gap-3"><i class="fas fa-star text-emerald-400 mt-1"></i> Fondo decorativo premium 🖼️</li>
                     </ul>
+
                     <div class="pt-8 border-t border-white/10 relative z-10">
-                        <p class="text-3xl font-bold text-emerald-400">Desde S/ 39.00 <span class="text-sm font-medium opacity-50">por persona</span></p>
-                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-3 bg-emerald-400 text-emerald-950 rounded-xl font-bold hover:bg-white transition">Solicitar Presupuesto Fuego</a>
+                        <div class="text-center">
+                            <p class="text-[10px] font-bold text-emerald-400/50 uppercase mb-2">Inversión por Persona</p>
+                            <p class="text-6xl font-bold text-white mb-2" id="unitFuego">S/ 45.00</p>
+                            <p class="text-xs text-emerald-400 italic">"Todo incluido para tu evento"</p>
+                        </div>
+                        <a href="https://wa.me/51905433158" target="_blank" class="mt-6 inline-block w-full text-center py-4 bg-emerald-500 text-emerald-950 rounded-xl font-bold hover:bg-white transition shadow-lg shadow-emerald-500/20">
+                            Solicitar Presupuesto
+                        </a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Ubicación Detallada -->
+    <section id="ubicacion" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-emerald-700 font-bold uppercase tracking-[0.2em] text-xs">Encuéntranos</span>
+                <h2 class="text-4xl md:text-5xl mt-4 mb-6 font-display">Ubicación 📍</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                    Nos ubicamos en **Panamericana Norte frente al paradero Licapa** en el distrito de Paiján, provincia de Ascope, región La Libertad.
+                </p>
+            </div>
+
+            <!-- Grid de Orígenes -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                
+                <!-- Origen: Paiján -->
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 card-hover">
+                    <h4 class="text-xl font-bold text-emerald-900 mb-6 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-3 text-emerald-500"></i> Desde Paiján
+                    </h4>
+                    <div class="space-y-6 text-sm">
+                        <div class="flex gap-4">
+                            <i class="fas fa-taxi text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Transporte Público</p>
+                                <p class="text-slate-500 leading-relaxed text-xs">Toma un taxi desde el paradero cercano hacia Licapa frente a Hacienda Solano.</p>
+                                <p class="mt-2 font-bold text-emerald-700">S/ 2 - 3 | 5 min</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-car text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Automóvil</p>
+                                <p class="text-slate-500 mb-3 text-xs">Ruta panamericana dirección Trujillo frente al Paradero Licapa.</p>
+                                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="text-emerald-600 font-bold hover:underline text-xs">Iniciar Ruta <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Origen: Trujillo -->
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 card-hover">
+                    <h4 class="text-xl font-bold text-emerald-900 mb-6 flex items-center">
+                        <i class="fas fa-city mr-3 text-emerald-500"></i> Desde Trujillo
+                    </h4>
+                    <div class="space-y-6 text-sm">
+                        <div class="flex gap-4">
+                            <i class="fas fa-bus text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Transporte Público</p>
+                                <p class="text-slate-500 leading-relaxed text-xs">Transporte "El Dorado" dirección Norte. Bajar en Hacienda Solano.</p>
+                                <p class="mt-2 font-bold text-emerald-700">S/ 7 - 8 | 90 min</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-car text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Automóvil</p>
+                                <p class="text-slate-500 mb-3 text-xs">Dirección Norte siguiendo Panamericana (60 min aprox).</p>
+                                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="text-emerald-600 font-bold hover:underline text-xs">Iniciar Ruta <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Origen: Puerto Malabrigo -->
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 card-hover">
+                    <h4 class="text-xl font-bold text-emerald-900 mb-6 flex items-center">
+                        <i class="fas fa-anchor mr-3 text-emerald-500"></i> Desde Malabrigo
+                    </h4>
+                    <div class="space-y-6 text-sm">
+                        <div class="flex gap-4">
+                            <i class="fas fa-bus text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Transporte Público</p>
+                                <p class="text-slate-500 leading-relaxed text-xs">Transporte "El Dorado" dirección Paiján.</p>
+                                <p class="mt-2 font-bold text-emerald-700">S/ 2 - 3 | 30 min</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-car text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Automóvil</p>
+                                <p class="text-slate-500 mb-3 text-xs">Dirección Norte hacia Panamericana (25 min aprox).</p>
+                                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="text-emerald-600 font-bold hover:underline text-xs">Iniciar Ruta <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Origen: Chocope -->
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 card-hover">
+                    <h4 class="text-xl font-bold text-emerald-900 mb-6 flex items-center">
+                        <i class="fas fa-road mr-3 text-emerald-500"></i> Desde Chocope
+                    </h4>
+                    <div class="space-y-6 text-sm">
+                        <div class="flex gap-4">
+                            <i class="fas fa-bus text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Transporte Público</p>
+                                <p class="text-slate-500 leading-relaxed text-xs">Transporte "El Dorado" dirección Norte hacia Paiján.</p>
+                                <p class="mt-2 font-bold text-emerald-700">S/ 2 - 3 | 15 min</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-car text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Automóvil</p>
+                                <p class="text-slate-500 mb-3 text-xs">Dirección Norte siguiendo Panamericana (10 min aprox).</p>
+                                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="text-emerald-600 font-bold hover:underline text-xs">Iniciar Ruta <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Origen: Lima -->
+                <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 card-hover">
+                    <h4 class="text-xl font-bold text-emerald-900 mb-6 flex items-center">
+                        <i class="fas fa-plane-departure mr-3 text-emerald-500"></i> Desde Lima
+                    </h4>
+                    <div class="space-y-6 text-sm">
+                        <div class="flex gap-4">
+                            <i class="fas fa-bus text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Transporte Público</p>
+                                <p class="text-slate-500 leading-relaxed text-xs">Emtrafesa es la mejor opción directa a la agencia en Paiján.</p>
+                                <p class="mt-2 font-bold text-emerald-700">S/ 100 | 10 horas</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-car text-slate-400 mt-1"></i>
+                            <div>
+                                <p class="font-bold mb-1 text-slate-700">Automóvil</p>
+                                <p class="text-slate-500 mb-3 text-xs">Ruta Panamericana Norte siguiendo Google Maps.</p>
+                                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="text-emerald-600 font-bold hover:underline text-xs">Iniciar Ruta <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Final -->
+                <div class="bg-emerald-900 p-8 rounded-[2rem] text-white flex flex-col justify-center items-center text-center card-hover">
+                    <div class="w-16 h-16 bg-emerald-400/20 rounded-full flex items-center justify-center mb-6 text-3xl">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 font-display">Reserva tu Visita</h4>
+                    <p class="text-emerald-100 text-sm leading-relaxed mb-6">
+                        Agenda una visita guiada para conocer nuestras instalaciones y la pista de baile de 250m².
+                    </p>
+                    <a href="https://wa.me/51905433158" target="_blank" class="bg-emerald-500 text-emerald-950 px-6 py-3 rounded-xl font-bold text-sm hover:bg-emerald-400 transition">
+                        Agendar Ahora
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Mapa / Footer Info -->
+            <div class="bg-slate-100 p-8 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="text-left">
+                    <h5 class="text-2xl font-bold text-emerald-950 mb-2 font-display">¿Cómo llegar?</h5>
+                    <p class="text-slate-600 text-sm italic">Panamericana Norte frente al paradero Licapa - Paiján.</p>
+                </div>
+                <div class="flex gap-4 flex-wrap">
+                    <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="bg-white text-emerald-900 px-8 py-4 rounded-xl font-bold shadow-sm hover:bg-slate-50 transition border border-slate-200 text-sm">
+                        <i class="fas fa-map-marked-alt mr-2 text-emerald-600"></i> Iniciar Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -206,25 +449,73 @@
     <footer class="bg-slate-900 text-slate-400 py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto">
             <div class="flex items-center justify-center gap-3 mb-8">
-                <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                     <i class="fas fa-landmark text-xs"></i>
                 </div>
                 <span class="text-xl font-bold tracking-tight text-white uppercase">Hacienda Solano</span>
             </div>
-            <p class="text-sm mb-8 leading-relaxed max-w-lg mx-auto">
-                El escenario perfecto para bodas, cumpleaños y eventos corporativos en Paiján. Espacios versátiles y naturaleza en armonía.
+            <p class="text-xs mb-8 uppercase tracking-widest leading-relaxed italic text-slate-500">
+                &copy; 2024 Hacienda Solano · <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="hover:text-emerald-500 transition underline underline-offset-4 decoration-emerald-800/30 text-emerald-700">Carretera Panamericana Norte KM 613</a>
             </p>
             <div class="flex justify-center gap-6 mb-10">
-                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
-                <a href="https://wa.me/51905433158" target="_blank" class="hover:text-white transition"><i class="fab fa-whatsapp text-xl"></i></a>
+                <a href="https://wa.me/51905433158" target="_blank" class="hover:text-white transition text-2xl"><i class="fab fa-whatsapp"></i></a>
+                <a href="http://instagram.com/haciendasolano" target="_blank" class="hover:text-white transition text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="http://facebook.com/haciendasolanoperu" target="_blank" class="hover:text-white transition text-2xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="hover:text-white transition text-2xl"><i class="fas fa-location-dot"></i></a>
             </div>
-            <p class="text-xs mb-8 uppercase tracking-widest">&copy; 2024 Hacienda Solano · Panamericana Norte · Paiján, La Libertad</p>
-            <a href="https://wa.me/51905433158" target="_blank" class="inline-block bg-emerald-600 text-white px-10 py-4 rounded-full font-bold hover:bg-emerald-500 transition shadow-lg shadow-emerald-600/20">
-                AGENDAR VISITA GUIADA
-            </a>
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] opacity-30">Donde tus sueños cobran vida propia</p>
         </div>
     </footer>
 
+    <script>
+        const sTierra = document.getElementById('sliderTierra');
+        const sFuego = document.getElementById('sliderFuego');
+        
+        const vTierra = document.getElementById('valTierra');
+        const vFuego = document.getElementById('valFuego');
+        
+        const pTierra = document.getElementById('priceTierra');
+        const uTierra = document.getElementById('unitTierra');
+        const uFuego = document.getElementById('unitFuego');
+
+        function updatePricing() {
+            const guestsT = parseInt(sTierra.value);
+            const guestsF = parseInt(sFuego.value);
+            
+            vTierra.textContent = guestsT;
+            vFuego.textContent = guestsF;
+
+            // Lógica Tierra
+            let totalT;
+            if (guestsT <= 80) totalT = 1200;
+            else if (guestsT <= 140) totalT = 1600;
+            else if (guestsT <= 200) totalT = 2100;
+            else totalT = 2400;
+
+            pTierra.textContent = `S/ ${totalT.toLocaleString()}`;
+            uTierra.textContent = `S/ ${(totalT / guestsT).toFixed(2)}`;
+
+            // Lógica Fuego
+            let ppF;
+            if (guestsF <= 80) ppF = 50;
+            else if (guestsF <= 140) ppF = 45;
+            else if (guestsF <= 200) ppF = 41;
+            else ppF = 39;
+
+            uFuego.textContent = `S/ ${ppF.toFixed(2)}`;
+        }
+
+        sTierra.addEventListener('input', () => {
+            sFuego.value = sTierra.value;
+            updatePricing();
+        });
+
+        sFuego.addEventListener('input', () => {
+            sTierra.value = sFuego.value;
+            updatePricing();
+        });
+
+        updatePricing();
+    </script>
 </body>
 </html>
