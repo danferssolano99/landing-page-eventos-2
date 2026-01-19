@@ -420,7 +420,7 @@
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-4 font-display">Reserva tu Visita</h4>
-                    <p class="text-emerald-100 text-sm leading-relaxed mb-6">
+                    <p class="text-emerald-100 text-sm leading-relaxed mb-6 text-xs">
                         Agenda una visita guiada para conocer nuestras instalaciones y la pista de baile de 250m².
                     </p>
                     <a href="https://wa.me/51905433158" target="_blank" class="bg-emerald-500 text-emerald-950 px-6 py-3 rounded-xl font-bold text-sm hover:bg-emerald-400 transition">
@@ -452,7 +452,7 @@
                 <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                     <i class="fas fa-landmark text-xs"></i>
                 </div>
-                <span class="text-xl font-bold tracking-tight text-white uppercase">Hacienda Solano</span>
+                <span class="text-xl font-bold tracking-tight text-white uppercase font-display">Hacienda Solano</span>
             </div>
             <p class="text-xs mb-8 uppercase tracking-widest leading-relaxed italic text-slate-500">
                 &copy; 2024 Hacienda Solano · <a href="https://maps.app.goo.gl/b56Ct8b4nVv5WrKf7" target="_blank" class="hover:text-emerald-500 transition underline underline-offset-4 decoration-emerald-800/30 text-emerald-700">Carretera Panamericana Norte KM 613</a>
@@ -489,7 +489,7 @@
             let totalT;
             if (guestsT <= 80) totalT = 1200;
             else if (guestsT <= 140) totalT = 1600;
-            else if (guestsT <= 200) totalT = 2100;
+            else if (guestsT <= 200) totalT = 2000; // CORREGIDO: De 2100 a 2000 según progresión lógica
             else totalT = 2400;
 
             pTierra.textContent = `S/ ${totalT.toLocaleString()}`;
